@@ -56,7 +56,15 @@ html {
    pointer-events: none;
    background: gray !important;
 }
+.small {
+   display: none;
+}
 
+@media all and (max-width: 500px) {
+   body {
+      padding: 0 0.5rem;
+   }
+}
 /******************************************
 /* TOP
 /*******************************************/
@@ -91,6 +99,144 @@ html {
    background: rgb(31, 54, 99);
 }
 
+@media all and (max-width: 1080px) {
+   #listToggle input,
+   #listToggle span {
+      display: none;
+   }
+
+   #list {
+      width: 35rem;
+      left: 0rem;
+      display: flex;
+      list-style: none;
+
+      background: none;
+      padding: 0;
+      margin: -1rem;
+
+      transform-origin: 0% 0%;
+      transform: translate(0, 0);
+      transition: transform 0s;
+   }
+   #list a {
+      font-size: 1.75rem;
+      text-align: center;
+      padding: 0.75rem;
+   }
+}
+@media all and (max-width: 730px) {
+   .nav {
+      top: 0;
+   }
+   .nav li {
+      font-size: 3rem;
+      background: rgb(132, 149, 180);
+   }
+   .nav a {
+      color: rgb(6, 23, 59);
+   }
+   /* MENU TOGGLE */
+   #listToggle {
+      z-index: 1;
+      user-select: none;
+      position: relative;
+      top: 1.3rem;
+      left: 2.5rem;
+      margin: 1rem;
+   }
+   #listToggle a {
+      text-decoration: none;
+   }
+
+   #listToggle input {
+      display: block;
+      width: 4rem;
+      height: 3.2rem;
+      position: absolute;
+
+      cursor: pointer;
+      opacity: 0;
+      z-index: 2;
+   }
+   #listToggle span {
+      display: block;
+      width: 3.3rem;
+      height: 0.3rem;
+      margin-bottom: 0.5rem;
+      position: relative;
+
+      background: rgb(132, 149, 180);
+      border-radius: 0.3rem;
+
+      z-index: 1;
+
+      transform-origin: 4px 0px;
+
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+         background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+   }
+
+   #listToggle span:first-child {
+      transform-origin: 0% 0%;
+   }
+   #listToggle span:nth-last-child(2) {
+      transform-origin: 0% 100%;
+   }
+
+   #listToggle input:checked ~ span {
+      opacity: 1;
+      transform: rotate(45deg) translate(-2px, -1px);
+      background: rgb(132, 149, 180);
+   }
+   #listToggle input:checked ~ .navButtons {
+      transform: translate(100%, 0);
+   }
+   #listToggle input:checked ~ span:nth-last-child(3) {
+      opacity: 0;
+      transform: rotate(0deg) scale(0.2, 0.2);
+   }
+   #listToggle input:checked ~ span:nth-last-child(2) {
+      transform: rotate(-45deg) translate(0, -1px);
+   }
+   .navButtons {
+      position: absolute;
+      width: 11rem;
+      top: 8rem;
+      left: -13rem;
+
+      text-align: center;
+      list-style: none;
+
+      background: rgba(0, 0, 0, 0.8);
+      padding: 4rem 0 3rem 0;
+      margin: -4rem 0 0 -2rem;
+
+      transition: transform 0.75s cubic-bezier(0.77, 0.2, 0.05, 1);
+   }
+   .navButtons li {
+      margin: 1.5rem 0;
+   }
+   .navButtons a:hover {
+      color: rgb(37, 166, 177);
+   }
+   .navButtons a {
+      width: 11rem;
+      font-size: 2rem;
+      padding: 1rem 0;
+      transition: color 0.3s ease;
+   }
+   #listToggle input:checked ~ ul {
+      transform: none;
+   }
+}
+@media all and (max-width: 500px) {
+   #listToggle {
+      left: 0.5rem;
+   }
+}
+
+/* MAIN */
 .mainContainer {
    margin-left: 10rem;
 }
@@ -129,7 +275,46 @@ html {
    border-radius: 50%;
    margin: auto auto;
 }
+@media all and (max-width: 1080px) {
+}
+@media all and (max-width: 730px) {
+   .mainContainer {
+      margin: 0;
+   }
+   .employee {
+      margin: 1rem 0 0 0;
+   }
+   .logo {
+      width: 15rem;
+      padding-top: 1.5rem;
+      margin: 1.5rem 1rem;
+   }
+}
+@media all and (max-width: 600px) {
+   .logo {
+      width: 12rem;
+   }
+   .employee .container {
+      font-size: 1.2rem;
+   }
+   .userPic {
+      margin: 0.5rem;
+   }
+}
+@media all and (max-width: 500px) {
+   .employee .container {
+      font-size: .8rem;
+   }
+   .navButtons {
+      left: -11rem;
+   }
+}
 
+/******************************************
+/* WORKORDERS.EJS
+/*******************************************/
+
+/* CREATE/SORT */
 .createContainer {
    height: 8rem;
    width: 100%;
@@ -139,18 +324,16 @@ html {
    align-items: center;
    margin-right: 2rem;
 }
-.sort {
-   position: relative;
-   right: 20rem;
-}
 .sort h3 {
    font-size: 2rem;
+   text-align: right;
    padding: 1rem;
 }
 .sortOptions {
    height: 3rem;
    font-size: 1.5rem;
    text-align: center;
+   border: 1px solid black;
 }
 .create {
    height: 5rem;
@@ -169,14 +352,12 @@ html {
 .workOrdersMain {
    flex-direction: column;
 }
-
 .workOrders {
    width: 100%;
    height: 20rem;
    padding: 0;
    overflow-y: auto;
 }
-
 .request {
    min-height: 3rem;
    width: 100%;
@@ -216,14 +397,60 @@ html {
    text-align: center;
    margin: 0 5rem;
 }
+@media all and (max-width: 1080px) {
+   .title span {
+      font-size: 1.6rem;
+      margin: 0 2rem;
+   }
+   .request span {
+      font-size: 1.2rem;
+      margin: 0 2rem;
+   }
+}
+@media all and (max-width: 730px) {
+   .sort h3 {
+      font-size: 1.2rem;
+   }
+   .sortOptions {
+      font-size: 1rem;
+   }
+   .create {
+      font-size: 1rem;
+   }
+   .title span {
+      font-size: 1.2rem;
+      margin: 0.5rem;
+   }
+   .request span {
+      font-size: 1rem;
+      margin: 0.5rem;
+   }
+}
+@media all and (max-width: 500px) {
+   .sortOptions {
+      width: 7rem;
+   }
+}
+@media all and (max-width: 390px) {
+   .small {
+      display: block;
+      width: 10rem;
+      line-height: 3rem;
+      font-size: 3rem;
+   }
+   .large {
+      display: none;
+   }
+}
 
+/* WO INFO */
 .woInfo {
    flex-direction: column;
    justify-content: space-between;
    flex-wrap: wrap;
    background: rgba(239, 239, 239, 0.85);
    background: rgba(0, 0, 0, 0.15);
-   background: rgba(6, 23, 59, .8);
+   background: rgba(6, 23, 59, 0.8);
    background: rgb(6, 23, 59);
    background: white;
    /* color: white; */
@@ -239,7 +466,6 @@ html {
    width: 41%;
    justify-content: center;
 }
-
 .woInfo .left,
 .woInfo .middle,
 .woInfo .right,
@@ -316,6 +542,16 @@ html {
    height: 8rem;
    margin: 0 auto;
 }
+
+/* @media all and (max-width: 1080px) {
+
+}
+@media all and (max-width: 730px) {
+
+}
+@media all and (max-width: 500px) {
+
+} */
 
 /* .main .createWOMain {
 } */
