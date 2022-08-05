@@ -432,6 +432,9 @@ html {
    }
 }
 @media all and (max-width: 390px) {
+   .sort h3 {
+      font-size: 1rem;
+   }
    /* .small {
       display: block;
       width: 10rem;
