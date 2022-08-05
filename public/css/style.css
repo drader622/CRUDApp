@@ -432,15 +432,15 @@ html {
    }
 }
 @media all and (max-width: 390px) {
-   .small {
+   /* .small {
       display: block;
       width: 10rem;
       line-height: 3rem;
       font-size: 3rem;
-   }
-   .large {
+   } */
+   /* .large {
       display: none;
-   }
+   } */
 }
 
 /* WO INFO */
