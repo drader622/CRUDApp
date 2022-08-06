@@ -541,6 +541,9 @@ html {
 }
 
 @media all and (max-width: 1230px) {
+   .woInfo {
+      /* height: 25rem; */
+   }
    .woInfo div {
       font-size: 1.2rem;
    }
@@ -550,6 +553,7 @@ html {
    .solDetail,
    .textDetail h2 {
       font-size: 1.2rem;
+      margin: 0;
    }
    .woInfo .left,
    .woInfo .middle,
@@ -576,14 +580,16 @@ html {
 }
 @media all and (max-width: 730px) {
    .info {
+      width: 100%;
       overflow-y: auto;
       flex-direction: column;
    }
    .requested {
-      width: 70%;
+      width: 100%;
    }
    .responded {
-      width: 69%;
+      width: 100%;
+      height: 7rem;
    }
 }
 @media all and (max-width: 500px) {
