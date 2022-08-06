@@ -190,8 +190,8 @@ function showWoInfo(data) {
     document.querySelector('#detail').innerText = data.probDetail;
     document.querySelector('#reqDate').innerText = data.reqDate;
     document.querySelector('#reqTime').innerText = reqTime;
-    document.querySelector('#reqBy').innerText = `${data.reqEmp} - ${data.reqEmpTitle}`;
-    document.querySelector('#resEmp').innerText = `${data.resEmp} - ${data.resEmpTitle}`;
+    document.querySelector('#reqBy').innerText = `${data.reqEmp}`;
+    document.querySelector('#resEmp').innerText = `${data.resEmp}`;
     document.querySelector('#resDate').innerText = data.resDate;
     document.querySelector('#resTime').innerText = resTime;
 
