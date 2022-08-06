@@ -432,13 +432,13 @@ html {
    .sortOptions {
       width: 7rem;
    }
-   .workOrders {
-      height: 15rem;
-   }
 }
 @media all and (max-width: 390px) {
    .sort h3 {
       font-size: 1rem;
+   }
+      .workOrders {
+      height: 15rem;
    }
 }
 
@@ -544,9 +544,6 @@ html {
 }
 
 @media all and (max-width: 1230px) {
-   .woInfo {
-      /* height: 25rem; */
-   }
    .woInfo div {
       font-size: 1.2rem;
    }
