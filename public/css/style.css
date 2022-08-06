@@ -78,21 +78,19 @@ html {
    flex-direction: column;
    padding: 0 2rem;
 }
-.nav li {
+.nav a {
    text-align: center;
    list-style: none;
-   font-size: 4rem;
    cursor: pointer;
    color: rgb(132, 149, 180);
    background: rgb(6, 23, 59);
-   padding: 0.5rem 1rem;
    margin: 0.5rem 0;
    border-radius: 1rem;
 }
 .nav a {
    font-size: 4rem;
    color: rgb(132, 149, 180);
-   padding: 0.5rem;
+   padding: 0 0.5rem;
 }
 .nav li:hover {
    color: rgb(244, 245, 247);
@@ -131,10 +129,11 @@ html {
    }
    .nav li {
       font-size: 3rem;
-      background: rgb(132, 149, 180);
+      /* background: rgb(132, 149, 180); */
    }
    .nav a {
       color: rgb(6, 23, 59);
+      background: rgb(132, 149, 180);
    }
    /* MENU TOGGLE */
    #listToggle {
@@ -161,7 +160,7 @@ html {
    }
    #listToggle span {
       display: block;
-      width: 3.3rem;
+      width: 3rem;
       height: 0.3rem;
       margin-bottom: 0.5rem;
       position: relative;
@@ -218,12 +217,10 @@ html {
       margin: 1.5rem 0;
    }
    .navButtons a:hover {
-      color: rgb(37, 166, 177);
+      color: rgb(255, 255, 255);
+      background: rgb(31, 54, 99);
    }
    .navButtons a {
-      width: 11rem;
-      font-size: 2rem;
-      padding: 1rem 0;
       transition: color 0.3s ease;
    }
    #listToggle input:checked ~ ul {
@@ -437,7 +434,7 @@ html {
    .sort h3 {
       font-size: 1rem;
    }
-      .workOrders {
+   .workOrders {
       height: 15rem;
    }
 }

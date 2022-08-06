@@ -24,30 +24,22 @@
       />
    </head>
    <body class="">
-      <nav class="nav flex">
-         <ul class="navButtons flex">
-            <li id="accountInfo" class="accountInfoMain topNavButtons">
-               <a href="/account"><i class="icon fa-solid fa-user"></i></a>
-            </li>
-            <li id="moduleInfo" class="moduleInfoMain topNavButtons">
-               <i class="icon fa-solid fa-industry"></i>
-            </li>
-            <li id="workOrdersInfo" class="workOrdersMain">
-               <a href="/workOrders"><i class="fa-solid fa-clipboard-list"></i></a>
-            </li>
-            <li class="pmInfoMain">
-               <i class="fa-solid fa-calendar-day"></i>
-            </li>
-            <li class="storeRoomInfoMain">
-               <i class="fa-solid fa-warehouse"></i>
-            </li>
-            <li class="messagingMain">
-               <i class="fa-solid fa-comment"></i>
-            </li>
-            <li class="coworkerInfoMain">
-               <i class="fa-solid fa-people-group"></i>
-            </li>
-         </ul>
+<nav class="nav flex">
+         <div id="listToggle">
+            <input type="checkbox" />
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+            <ul class="navButtons flex">
+               <a href="/account" id="accountInfo" class="accountInfoMain topNavButtons"><i class="icon fa-solid fa-user"></i></a>
+               <a href="#"  id="moduleInfo" class="moduleInfoMain topNavButtons"><i class="icon fa-solid fa-industry"></i></a>
+               <a href="/workOrders" class="workOrdersMain"><i id="workOrdersInfo" class="fa-solid fa-clipboard-list"></i></a>
+               <a href="#" class="pmInfoMain"><i class="fa-solid fa-calendar-day"></i></a>
+               <a href="#" class="storeRoomInfoMain"><i class="fa-solid fa-warehouse"></i></a>
+               <a href="#" class="messagingMain"><i class="fa-solid fa-comment"></i></a>
+               <a href="#" class="coworkerInfoMain"><i class="fa-solid fa-people-group"></i></a>
+            </ul>
+         </div>
       </nav>
 
       <section class="mainContainer">
