@@ -33,7 +33,7 @@ html {
    width: 100%;
    margin: 0;
    padding: 0;
-   overflow-x: hidden;
+   overflow: hidden;
 }
 body {
    justify-content: space-between;
@@ -431,6 +431,9 @@ html {
 @media all and (max-width: 500px) {
    .sortOptions {
       width: 7rem;
+   }
+   .workOrders {
+      height: 15rem;
    }
 }
 @media all and (max-width: 390px) {
