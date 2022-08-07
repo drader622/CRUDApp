@@ -96,32 +96,38 @@ html {
    color: rgb(244, 245, 247);
    background: rgb(31, 54, 99);
 }
+#listToggle input,
+#listToggle span {
+   display: none;
+}
 
-@media all and (max-width: 1080px) {
-   #listToggle input,
-   #listToggle span {
-      display: none;
-   }
+#list {
+   width: 35rem;
+   left: 0rem;
+   display: flex;
+   list-style: none;
 
-   #list {
-      width: 35rem;
-      left: 0rem;
-      display: flex;
-      list-style: none;
+   background: none;
+   padding: 0;
+   margin: -1rem;
 
-      background: none;
-      padding: 0;
-      margin: -1rem;
+   transform-origin: 0% 0%;
+   transform: translate(0, 0);
+   transition: transform 0s;
+}
+#list a {
+   font-size: 1.75rem;
+   text-align: center;
+   padding: 0.75rem;
+}
+.navButtons a:hover {
+   color: rgb(255, 255, 255);
+   background: rgb(31, 54, 99);
+}
+@media all {
+}
 
-      transform-origin: 0% 0%;
-      transform: translate(0, 0);
-      transition: transform 0s;
-   }
-   #list a {
-      font-size: 1.75rem;
-      text-align: center;
-      padding: 0.75rem;
-   }
+@media all {
 }
 @media all and (max-width: 820px) {
    .nav {
@@ -594,278 +600,37 @@ html {
 @media all and (max-width: 500px) {
 }
 
-/* @media all and (max-width: 1080px) {
-
+/******************************************
+/* CREATE.EJS
+/*******************************************/
+.main {
+   height: 45rem;
 }
-@media all and (max-width: 730px) {
-
-}
-@media all and (max-width: 500px) {
-
-} */
-
-/* .main .createWOMain {
-} */
-/* .top {
-   position: fixed;
-   top: 0;
-   justify-content: space-evenly;
-   flex-wrap: wrap;
-   margin: 1rem;
-}
-.top .right {
-   width: 50%;
-}
-.top .icon {
-   width: 40px;
-   text-align: center;
-   font-size: 3.5rem;
-}
-.small {
-   justify-content: space-evenly;
-}
-.small a {
-   height: 5rem;
-   width: 50%;
-   text-transform: none;
-   text-align: center;
-   line-height: 5rem;
-   background: rgb(0, 77, 0);
-   padding: 0.5rem 2rem;
-   margin: 1rem 0.5rem;
-   border-radius: 1rem;
-}
-.small a {
-   color: rgb(0, 195, 0);
-}
-.headshot {
-   height: 15rem;
-   width: auto;
-   border: 0.5rem solid rgb(0, 77, 0);
-   border-radius: 50%;
-   margin: auto auto;
-}
-
-.employeeInfo {
-   flex-direction: column;
-}
-.employeeInfo span {
-   font-size: 1.5rem;
-}
-#name {
-   font-size: 2.2rem;
-   font-weight: bold;
-}
-
-.bottom {
-   flex-direction: column;
-}
-
-.create {
-   height: 5rem;
+.optionsContainer {
+   max-width: 100%;
    align-items: center;
-   text-align: center;
-   text-transform: uppercase;
-   background: rgb(231, 0, 0);
-   border-radius: 1rem;
-   padding: 0.5rem 1.5rem;
-   margin-top: 1rem;
-   margin: 2rem auto 0;
 }
-.create a {
-   font-size: 2rem;
-   text-decoration: none;
-   color: white;
-} */
-
-/* .bottom {
-   width: 100%;
-   position: fixed;
-   bottom: 0;
-   align-items: center;
-   margin: 0;
-   padding: 1rem 0;
-} */
-/* .bottom .footer {
-   align-self: flex-end;
-} */
-
-/* main {
-   width: 100%;
-   height: 38rem;
-   min-height: 70rem;
-   width: 100%;
-   align-self: flex-start;
-   margin: .5rem;
-   height: 50rem;
-   margin-top: 25rem;
-
-   border: 5px solid blue;
-} */
-
-/* WORK ORDER MAIN */
-/* main .workOrdersMain {
-   width: 100%;
-   flex-direction: column;
-   justify-content: flex-start;
-   margin: 1rem;
+.optionsContainer h2 {
+   margin: 1rem 0.5rem 1rem 1.5rem;
 }
-.workOrdersMain .tabs {
-   justify-content: center;
-}
-.workOrdersMain a {
-   cursor: pointer;
-}
-.workOrdersMain .workOrders {
-   list-style: none;
-   font-size: 2rem;
-   padding: 0;
-   margin: 0;
-}
-.request .dept {
-   width: 14rem;
-   align-items: center;
-   text-align: center;
-}
-.request .dept span {
-   font-size: 2rem;
-}
-.workOrders .request {
-   min-height: 6.5rem;
-   justify-content: space-around;
-   color: black;
-   cursor: pointer;
-   padding: 0.5rem 0;
-   margin: 1rem 0;
-   border-radius: 1rem;
-}
-.workOrders .request:hover {
-   color: rgb(0, 195, 0);
-   background: transparent !important;
-   border: 1px solid rgb(0, 77, 0);
-}
-.workOrders span {
-   font-size: 1.5rem;
-}
-.workOrders .rightSide {
-   flex-direction: column;
-}
-.workOrders .woNum {
-   font-weight: bold;
-}
-.workOrders .rightSide span {
-   width: 16.5rem;
-} */
-
-/* WO REQUEST MAIN */
-/* .woRequestMain {
-   width: 100%;
-   max-height: 75rem;
-   flex-direction: column;
-   align-items: center;
-   margin: 2rem 0.5rem 5rem;
-   overflow-y: auto;
-}
-.woRequestMain span {
-   font-size: 1.2rem;
-}
-.woRequestMain h3 {
-   font-size: 1.6rem;
-   font-weight: bold;
-   margin: 0;
-}
-.woRequestMain .info {
-   width: 100%;
-   color: rgb(255, 255, 255);
-   background: rgb(0, 0, 0);
-   border: 1rem solid rgb(255, 0, 0);
-   border-radius: 1rem;
-}
-#status {
-   font-weight: bold;
-   text-transform: uppercase;
-   color: red;
-}
-.info .container {
-   min-height: 5rem;
-   flex-direction: row;
-   justify-content: space-between;
-   padding: 0.5rem 1rem;
-   margin: 1rem;
-   border-radius: 1rem;
-   box-shadow: inset 0.25rem 0.25rem 0.2rem rgb(190, 190, 190),
-      inset -0.25rem -0.25rem 0.2rem rgb(190, 190, 190);
-}
-.back {
-   align-self: flex-start;
-   font-size: 2rem;
-   text-decoration: none;
-   color: rgb(0, 121, 0);
-}
-.buttons {
-   width: 100%;
-   justify-content: space-between;
-   margin: 1rem 0 1rem;
-}
-.buttons a {
-   width: 11rem;
-   height: 5rem;
-   font-size: 2rem;
-   text-decoration: none;
-   text-align: center;
-   color: black;
-   border-radius: 3rem;
-   padding: 1rem;
-}
-.buttons .respond {
-   background: rgb(250, 150, 0);
-}
-.buttons .close {
-   background: rgb(0, 255, 0);
-}
-.buttons .delete {
-   color: white;
-   background: black;
-}
-#solDetail {
-   height: 13rem;
-   font-size: 1.6rem;
-   overflow-y: auto;
-}
-#solDetail textarea {
-   height: 12rem;
-   width: 100%;
-} */
-
-/* CREATE WO MAIN */
-/* .createWOMain {
-   max-height: 50rem;
-   flex-direction: column;
-   align-items: center;
-   margin: 0;
-   overflow-y: auto;
-}
-.createWOMain h1 {
-   font-size: 2.5rem;
-   margin-bottom: 0;
+.createWOMain {
+   height: 100%;
+   margin-top: 3rem;
 }
 .createWOMain h2 {
    font-size: 2rem;
-   margin: 1rem 0 0;
 }
 .createWOMain form {
-   max-height: 30rem;
    text-align: center;
    overflow-y: auto;
 }
 .createWOMain select {
-   width: 20rem;
-   font-size: 2rem;
-   border: none;
+   height: 2.5rem;
+   font-size: 1.5rem;
+   border: 1px solid black;
 }
 .createWOMain .machine select {
-   width: 15rem;
-   margin: 0 1rem;
+   margin: 0 0.5rem;
 }
 .createWOMain option {
    width: 10rem;
@@ -877,11 +642,53 @@ html {
    height: 15rem;
    width: 35rem;
    font-size: 2rem;
-   border: none;
+   border: 1px solid black;
 }
 .createWOMain button {
+   display: block;
    font-size: 2.5rem;
+   color: rgb(132, 149, 180);
+   cursor: pointer;
+   background: rgb(6, 23, 59);
+   padding: 1rem;
+   border: none;
+   border-radius: 1rem;
+   margin: 1rem auto;
+}
+.createWOMain button:hover {
+   color: rgb(255, 255, 255);
+   background: rgb(31, 54, 99);
+}
+.createWOMain .description {
+   margin-top: 2rem;
+}
+
+@media all and (max-width: 390px) {
+   .optionsContainer h2 {
+      margin: 0.5rem;
+   }
+   .createWOMain .machine select {
+      margin: 0;
+   }
+}
+
+/* @media all and (max-width: 1080px) {
+
+}
+@media all and (max-width: 730px) {
+
+}
+@media all and (max-width: 500px) {
+
 } */
+
+/* CREATE WO MAIN */
+/*
+.createWOMain h1 {
+   font-size: 2.5rem;
+   margin-bottom: 0;
+}
+ */
 
 /* ACCOUNT INFO MAIn */
 /* .accountInfoMain {
