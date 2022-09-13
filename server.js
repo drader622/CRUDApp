@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors')
-// const MongoClient = require('mongodb').MongoClient;
+const MongoClient = require('mongodb').MongoClient;
 const mongoose = require('mongoose');
 // const WorkOrder = require('./models/workOrder');
 const pusher = require('./routes/pusher')
@@ -10,7 +10,7 @@ require('dotenv').config();
 
 let workOrderDb,
     modMachInfoDB,
-    dbConnectionStr = 'mongodb+srv://drader2:KodaDash1@cluster0.ugc78.mongodb.net/workOrders';
+    dbConnectionStr = 'mongodb+srv://drader2:KodaDash0622@cluster0.ugc78.mongodb.net/workOrders';
 
 mongoose.connect(dbConnectionStr, { useUnifiedTopology: true })
     .then(client => {

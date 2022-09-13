@@ -31,19 +31,19 @@
             <span class="line"></span>
             <span class="line"></span>
             <ul class="navButtons flex">
-               <a href="/account" id="accountInfo" class="accountInfoMain topNavButtons"><i class="icon fa-solid fa-user"></i></a>
-               <a href="#"  id="moduleInfo" class="moduleInfoMain topNavButtons"><i class="icon fa-solid fa-industry"></i></a>
-               <a href="/workOrders" class="workOrdersMain"><i id="workOrdersInfo" class="fa-solid fa-clipboard-list"></i></a>
-               <a href="#" class="pmInfoMain"><i class="fa-solid fa-calendar-day"></i></a>
-               <a href="#" class="storeRoomInfoMain"><i class="fa-solid fa-warehouse"></i></a>
-               <a href="#" class="messagingMain"><i class="fa-solid fa-comment"></i></a>
-               <a href="#" class="coworkerInfoMain"><i class="fa-solid fa-people-group"></i></a>
+               <a href="/account" id="accountInfo" class="accountInfoMain darkBackground"><i class="icon fa-solid fa-user"></i></a>
+               <a href="#" id="moduleInfo" class="moduleInfoMain darkBackground"><i class="icon fa-solid fa-industry"></i></a>
+               <a href="/workOrders" class="workOrdersMain darkBackground"><i id="workOrdersInfo" class="fa-solid fa-clipboard-list"></i></a>
+               <a href="#" class="pmInfoMain darkBackground"><i class="fa-solid fa-calendar-day"></i></a>
+               <a href="#" class="storeRoomInfoMain darkBackground"><i class="fa-solid fa-warehouse"></i></a>
+               <a href="#" class="messagingMain darkBackground"><i class="fa-solid fa-comment"></i></a>
+               <a href="#" class="coworkerInfoMain darkBackground"><i class="fa-solid fa-people-group"></i></a>
             </ul>
          </div>
       </nav>
 
       <section class="mainContainer">
-         <section class="employee flex">
+         <section class="employee darkBackground flex">
             <img class="logo" src="/images/default-monochrome.svg" alt="">
             </img>            
             <section class="flex">
@@ -55,13 +55,19 @@
                <span class="userPic"
                ><img class="headshot" src="/images/headshot.png" alt=""
                /></span>
-               <a href="/user" class="logout">Login</a>
+               <a href="/user" class="logout">Logout</a>
+            </section>
+            <section>
+               <p>Dark Mode</p>
+               <input type="checkbox" id="switch" class="checkbox" />                 
+               <label for="switch" class="toggle">
+               </label>
             </section> 
          </section>
          <section class="createContainer flex">
             <section class="sort flex">
-               <h3 class="large">Sort Work Orders </h3>
-               <h3 class="small">Sort</h3>
+               <h3 class="large darkLettering">Sort Work Orders </h3>
+               <h3 class="small darkLettering">Sort</h3>
                <select name="sort" id="sortOptions" class="sortOptions">
                   <option value="recent">Recent</option>
                   <option value="open">Open</option>
@@ -76,7 +82,7 @@
          </section>
          <section class="main">
             <section class="workOrdersMain flex">
-               <section class="title flex">
+               <section class="title darkBackground flex">
                   <span>WO Number</span>
                   <span>Status</span>
                   <span>Requested Dept</span>
@@ -89,7 +95,7 @@
                   <ul class="workOrders"></ul>
                </section>
             </section>
-            <section class="woInfo hidden flex">
+            <section class="woInfo darkBackground hidden flex">
                <section class="buttons flex">
                   <a href="#" class="respond hidden">Respond</a>
                   <a href="#" class="close hidden">Close</a>

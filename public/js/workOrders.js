@@ -10,10 +10,14 @@ let RELOAD = false,
 // window.onload = getWorkOrders();
 getWorkOrders();
 
-document.querySelector('#sortOptions').addEventListener('change', getWorkOrders)
+document.querySelector('#switch').addEventListener('click', switchModes);
+document.querySelector('#sortOptions').addEventListener('change', getWorkOrders);
 document.querySelector('.respond').addEventListener('click', respondToWorkOrder);
 document.querySelector('.close').addEventListener('click', closeWorkOrder);
 document.querySelector('.delete').addEventListener('click', deleteWorkOder);
+
+
+console.log(darkLetteringArr)
 
 //PUSHER
 var pusher = new Pusher('0badd11ed0483edfa1ed', {
@@ -209,7 +213,7 @@ function showWoInfo(data) {
 
     if (data.status === 'closed') {
         document.querySelector('.woInfo').style.borderColor = 'rgb(0, 255, 0)';
-        document.querySelector('#status').style.color = 'rgb(0, 255, 0)';
+        document.querySelector('#status').style.color = 'rgb(0, 214, 0)';
     } else if (data.respondedTo === true) {
         document.querySelector('.woInfo').style.borderColor = 'rgb(250, 150, 22)';
         document.querySelector('#status').style.color = 'rgb(250, 150, 22)';
@@ -223,6 +227,51 @@ function showWoInfo(data) {
     document.querySelector('.close').classList.remove('hidden');
     document.querySelector('.delete').classList.remove('hidden');
     document.querySelector('.woInfo').classList.remove('hidden');
+}
+function switchModes() {
+    let isChecked = document.querySelector('#switch').checked;
+    let sortOptions = document.querySelector('#sortOptions');
+    let darkBackgroundArr = document.querySelectorAll('.darkBackground');
+    let darkLetteringArr = document.querySelectorAll('.darkLettering');
+    let requestsBackground = document.querySelectorAll('.request');
+    console.log(isChecked);
+    if (isChecked) {
+        darkBackgroundArr.forEach(element => {
+            element.style.backgroundColor = 'rgb(75, 85, 103)';
+            element.style.color = 'rgb(6, 23, 59)';
+        });
+        darkLetteringArr.forEach(element => {
+            element.style.color = 'rgb(75, 85, 103)';
+        });
+        requestsBackground.forEach(element => {
+            element.style.backgroundColor = 'rgb(75, 85, 103)';
+        });
+        document.querySelector('html').style.backgroundColor = 'rgb(25, 25, 25)';
+        document.querySelector('.logo').classList.add('filter-dark');
+        document.querySelector('.logout').style.color = 'rgb(6, 23, 79)';
+        sortOptions.style.backgroundColor = 'rgb(25, 25, 25)';
+        sortOptions.style.color = 'rgb(75, 85, 103)';
+        sortOptions.style.borderColor = 'rgb(75, 85, 103)';
+    } else {
+        darkBackgroundArr.forEach(element => {
+            element.style.backgroundColor = 'rgb(6, 23, 59)';
+            element.style.color = 'rgb(132, 149, 180)';
+        });
+        darkLetteringArr.forEach(element => {
+            element.style.color = 'rgb(6, 23, 59)';
+        });
+        requestsBackground.forEach(element => {
+            element.style.backgroundColor = 'rgb(6, 23, 59)';
+        });
+        document.querySelector('html').style.backgroundColor = 'rgb(255, 255, 255)';
+        document.querySelector('.logo').classList.remove('filter-dark');
+        document.querySelector('.logout').style.color = 'rgb(132, 149, 180)';
+        document.querySelector('.woInfo').style.backgroundColor = 'rgb(255, 255, 255)';
+        document.querySelector('.woInfo').style.color = 'rgb(0, 0, 0)';
+        sortOptions.style.backgroundColor = 'rgb(255, 255, 255)';
+        sortOptions.style.color = 'rgb(6, 23, 59)';
+        sortOptions.style.borderColor = 'rgb(6, 23, 59)';
+    }
 }
 
 //USER REQUESTS
@@ -312,7 +361,6 @@ async function getOpenWorkOrders() {
         console.log(err)
     }
 }
-
 async function getWorkOrders() {
     let sortOption = document.querySelector('#sortOptions').value;
     let list = document.querySelector('.workOrders');
@@ -356,7 +404,6 @@ async function getWorkOrderInfo(num) {
         console.log(err)
     }
 }
-
 async function respondToWorkOrder() {
     let woNum = document.querySelector('#woNum').innerText;
     let resEmp = document.querySelector('#name').innerText;

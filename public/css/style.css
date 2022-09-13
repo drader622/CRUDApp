@@ -41,7 +41,6 @@ body {
 }
 html {
    font: 62.5% "IBM Plex Serif", sans-serif;
-   background: rgb(204, 206, 209);
    background: white;
 }
 
@@ -65,6 +64,27 @@ html {
       padding: 0 0.5rem;
    }
 }
+
+/* COLORS */
+a {
+      color: rgb(132, 149, 180);
+}
+/* .darkBackground,
+.createWOMain button {
+   background: rgb(40, 44, 47) !important;
+}
+.darkLettering {
+   color: rgb(6, 23, 59) !important;
+}
+html {
+   background: rgb(25, 25, 25);
+} */
+
+.filter-dark {
+   filter: invert(8%) sepia(68%) saturate(581%) hue-rotate(195deg)
+      brightness(36%) contrast(141%);
+}
+
 /******************************************
 /* TOP
 /*******************************************/
@@ -89,7 +109,6 @@ html {
 }
 .nav a {
    font-size: 4rem;
-   color: rgb(132, 149, 180);
    padding: 0 0.5rem;
 }
 .nav li:hover {
@@ -247,7 +266,10 @@ html {
    height: 10rem;
    justify-content: space-evenly;
    align-items: center;
+   font-size: 1.5rem;
+   color: rgb(132, 149, 180);
    background: rgb(6, 23, 59);
+   /* background: rgb(6, 13, 59); */
    border-radius: 1rem;
    padding-right: 1rem;
    margin: 3rem 0 0 0;
@@ -259,9 +281,8 @@ html {
 .logout {
    flex-direction: column;
    align-items: flex-end;
-   font-size: 1.5rem;
    text-decoration: none;
-   color: rgb(132, 149, 180);
+   /* color: rgb(132, 149, 180); */
 }
 .logo {
    width: 20rem;
@@ -278,6 +299,50 @@ html {
    border-radius: 50%;
    margin: auto auto;
 }
+
+/* Dark Mode Toggle */
+p {
+   margin: .5rem 0;
+}
+/* toggle in label designing */
+.toggle {
+   position: relative;
+   display: inline-block;
+   width: 8rem;
+   height: 3rem;
+   background-color: white;
+   border-radius: 30px;
+   border: 2px solid gray;
+}
+
+/* After slide changes */
+.toggle:after {
+   content: "";
+   position: absolute;
+   width: 3rem;
+   height: 2.8rem;
+   border-radius: 50%;
+   background-color: gray;
+   top: -1px;
+   left: -1px;
+   transition: all 0.5s;
+}
+
+/* Checkbox checked effect */
+.checkbox:checked + .toggle::after {
+   left: 4.9rem;
+}
+
+/* Checkbox checked toggle label bg color */
+.checkbox:checked + .toggle {
+   background-color: black;
+}
+
+/* Checkbox vanished */
+.checkbox {
+   display: none;
+}
+
 @media all and (max-width: 1080px) {
 }
 @media all and (max-width: 820px) {
@@ -387,12 +452,14 @@ html {
    margin: 0 5rem;
 }
 .title {
+   height: 6rem;
    min-width: 100%;
    align-items: center;
    font-size: 2rem;
    font-weight: bold;
+   color: rgb(132, 149, 180);
    background: rgba(239, 239, 239, 0.85);
-   background: rgba(0, 0, 0, 0.15);
+   background: rgb(6, 23, 59);
    border-radius: 1rem;
 }
 .title span {
@@ -533,7 +600,7 @@ html {
 }
 .buttons .delete {
    color: white;
-   background: black;
+   background: red;
 }
 .solDetail,
 .solDetailText {
@@ -544,6 +611,10 @@ html {
 .solDetailText {
    height: 8rem;
    margin: 0 auto;
+}
+
+#status {
+   /* color: rgb(0, 214, 0) !important; */
 }
 
 @media all and (max-width: 1230px) {
