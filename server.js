@@ -10,7 +10,7 @@ require('dotenv').config();
 
 let workOrderDb,
     modMachInfoDB,
-    dbConnectionStr = 'mongodb+srv://drader2:KodaDash0622@cluster0.ugc78.mongodb.net/workOrders';
+    dbConnectionStr = process.env.DB_STRING;
 
 mongoose.connect(dbConnectionStr, { useUnifiedTopology: true })
     .then(client => {

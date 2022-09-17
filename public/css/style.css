@@ -343,6 +343,8 @@ p {
    display: none;
 }
 
+
+
 @media all and (max-width: 1080px) {
 }
 @media all and (max-width: 820px) {
@@ -613,9 +615,6 @@ p {
    margin: 0 auto;
 }
 
-#status {
-   /* color: rgb(0, 214, 0) !important; */
-}
 
 @media all and (max-width: 1230px) {
    .woInfo div {

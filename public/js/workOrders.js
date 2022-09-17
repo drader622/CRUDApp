@@ -10,14 +10,11 @@ let RELOAD = false,
 // window.onload = getWorkOrders();
 getWorkOrders();
 
-document.querySelector('#switch').addEventListener('click', switchModes);
+// document.querySelector('#switch').addEventListener('click', switchModes);
 document.querySelector('#sortOptions').addEventListener('change', getWorkOrders);
 document.querySelector('.respond').addEventListener('click', respondToWorkOrder);
 document.querySelector('.close').addEventListener('click', closeWorkOrder);
 document.querySelector('.delete').addEventListener('click', deleteWorkOder);
-
-
-console.log(darkLetteringArr)
 
 //PUSHER
 var pusher = new Pusher('0badd11ed0483edfa1ed', {

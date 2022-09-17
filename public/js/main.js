@@ -1,3 +1,74 @@
+let SAVED = false;
+
+let darkMode = localStorage.getItem('darkMode');
+if (darkMode === null) localStorage.setItem('darkMode', false);
+if (darkMode === 'true') {
+    SAVED = true;
+    switchModes();
+}
+
+document.querySelector('#switch').addEventListener('click', switchModes);
+
+function switchModes() {
+    console.log('true')
+    darkMode = localStorage.getItem('darkMode');
+    let isChecked = document.querySelector('#switch').checked;
+    let sortOptions = document.querySelector('#sortOptions');
+    let darkBackgroundArr = document.querySelectorAll('.darkBackground');
+    let darkLetteringArr = document.querySelectorAll('.darkLettering');
+    let requestsBackground = document.querySelectorAll('.request');
+    
+    if (darkMode === 'false' || SAVED) {
+        darkBackgroundArr.forEach(element => {
+            element.style.backgroundColor = 'rgb(75, 85, 103)';
+            element.style.color = 'rgb(6, 23, 59)';
+        });
+        darkLetteringArr.forEach(element => {
+            element.style.color = 'rgb(75, 85, 103)';
+        });
+        requestsBackground.forEach(element => {
+            element.style.backgroundColor = 'rgb(75, 85, 103)';
+        });
+        document.querySelector('html').style.backgroundColor = 'rgb(25, 25, 25)';
+        document.querySelector('.logo').classList.add('filter-dark');
+        document.querySelector('.logout').style.color = 'rgb(6, 23, 79)';
+
+        if (sortOptions) {
+            sortOptions.style.backgroundColor = 'rgb(25, 25, 25)';
+            sortOptions.style.color = 'rgb(75, 85, 103)';
+            sortOptions.style.borderColor = 'rgb(75, 85, 103)';
+        }
+        let toggleSwitch = document.getElementById('switch');
+        toggleSwitch.checked = true;
+        toggleSwitch.addEventListener('click', switchModes);
+        localStorage.setItem('darkMode', true);
+        SAVED = false;
+    } else {
+        darkBackgroundArr.forEach(element => {
+            element.style.backgroundColor = 'rgb(6, 23, 59)';
+            element.style.color = 'rgb(132, 149, 180)';
+        });
+        darkLetteringArr.forEach(element => {
+            element.style.color = 'rgb(6, 23, 59)';
+        });
+        requestsBackground.forEach(element => {
+            element.style.backgroundColor = 'rgb(6, 23, 59)';
+        });
+        document.querySelector('html').style.backgroundColor = 'rgb(255, 255, 255)';
+        document.querySelector('.logo').classList.remove('filter-dark');
+        document.querySelector('.logout').style.color = 'rgb(132, 149, 180)';
+
+        if (sortOptions) {
+            document.querySelector('.woInfo').style.backgroundColor = 'rgb(255, 255, 255)';
+            document.querySelector('.woInfo').style.color = 'rgb(0, 0, 0)';
+            sortOptions.style.backgroundColor = 'rgb(255, 255, 255)';
+            sortOptions.style.color = 'rgb(6, 23, 59)';
+            sortOptions.style.borderColor = 'rgb(6, 23, 59)';
+        }
+        localStorage.setItem('darkMode', false);
+    }
+}
+
 // let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 // let UPDATED = false;
 
